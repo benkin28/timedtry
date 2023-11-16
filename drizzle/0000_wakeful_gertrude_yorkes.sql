@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS "todos" (
 	"title" text NOT NULL,
 	"description" text NOT NULL,
 	"date" timestamp DEFAULT CURRENT_TIMESTAMP,
-	"status" varchar(10)
+	"status" varchar(10) DEFAULT 'PENDING'::character varying
 );
 
 */

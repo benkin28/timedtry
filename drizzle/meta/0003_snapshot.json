@@ -1,9 +1,31 @@
 {
-  "id": "00000000-0000-0000-0000-000000000000",
-  "prevId": "",
+  "id": "53f8764b-ddbd-432b-be22-f8679c58268b",
+  "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "5",
   "dialect": "pg",
   "tables": {
+    "amogus": {
+      "name": "amogus",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "serial",
+          "primaryKey": true,
+          "notNull": true
+        },
+        "title": {
+          "name": "title",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {},
+      "uniqueConstraints": {}
+    },
     "todos": {
       "name": "todos",
       "schema": "",
@@ -31,14 +53,7 @@
           "type": "timestamp",
           "primaryKey": false,
           "notNull": false,
-          "default": "CURRENT_TIMESTAMP"
-        },
-        "status": {
-          "name": "status",
-          "type": "varchar(10)",
-          "primaryKey": false,
-          "notNull": false,
-          "default": "'PENDING'::character varying"
+          "default": "now()"
         }
       },
       "indexes": {},
@@ -48,6 +63,35 @@
     }
   },
   "enums": {
+    "aal_level": {
+      "name": "aal_level",
+      "values": {
+        "aal1": "aal1",
+        "aal2": "aal2",
+        "aal3": "aal3"
+      }
+    },
+    "code_challenge_method": {
+      "name": "code_challenge_method",
+      "values": {
+        "s256": "s256",
+        "plain": "plain"
+      }
+    },
+    "factor_status": {
+      "name": "factor_status",
+      "values": {
+        "unverified": "unverified",
+        "verified": "verified"
+      }
+    },
+    "factor_type": {
+      "name": "factor_type",
+      "values": {
+        "totp": "totp",
+        "webauthn": "webauthn"
+      }
+    },
     "key_status": {
       "name": "key_status",
       "values": {
@@ -71,35 +115,6 @@
         "secretbox": "secretbox",
         "secretstream": "secretstream",
         "stream_xchacha20": "stream_xchacha20"
-      }
-    },
-    "factor_type": {
-      "name": "factor_type",
-      "values": {
-        "totp": "totp",
-        "webauthn": "webauthn"
-      }
-    },
-    "factor_status": {
-      "name": "factor_status",
-      "values": {
-        "unverified": "unverified",
-        "verified": "verified"
-      }
-    },
-    "aal_level": {
-      "name": "aal_level",
-      "values": {
-        "aal1": "aal1",
-        "aal2": "aal2",
-        "aal3": "aal3"
-      }
-    },
-    "code_challenge_method": {
-      "name": "code_challenge_method",
-      "values": {
-        "s256": "s256",
-        "plain": "plain"
       }
     }
   },

@@ -2,7 +2,7 @@ import AddToDoForm from "./addToDoForm";
 import { db } from "../../../..";
 import { todos } from "../../../../drizzle/schema";
 import { redirect } from "next/navigation";
-
+export const dynamic = "force-dynamic";
 export default function Page() {
   async function handleAdd(formData: FormData) {
     "use server";

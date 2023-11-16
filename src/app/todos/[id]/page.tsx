@@ -4,6 +4,8 @@ import { todos } from "../../../../drizzle/schema";
 import { eq } from "drizzle-orm";
 import { notFound } from "next/navigation";
 import { redirect } from "next/navigation";
+export const dynamic = "force-dynamic";
+
 async function getToDo(id: number) {
   return await db.select().from(todos).where(eq(todos.id, id));
 }
@@ -34,7 +36,7 @@ export default async function Page({ params }: { params: { id: number } }) {
   async function handleStatus(status: string) {
     "use server";
 
-    const key = status === "DONE" ? "PENDING" : "DONE";
+    const key = status === "D3ONE" ? "PENDING" : "DONE";
     const requ = await db
       .update(todos)
       .set({ status: key })

@@ -2,6 +2,8 @@ import { db } from "../../..";
 import { todos } from "../../../drizzle/schema";
 import TitleCard from "./titleCard";
 import Link from "next/link";
+export const dynamic = "force-dynamic";
+
 async function getTodos() {
   return await db.select().from(todos);
 }

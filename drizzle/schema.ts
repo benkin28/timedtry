@@ -14,7 +14,12 @@ export const todos = pgTable("todos", {
 	title: text("title").notNull(),
 	description: text("description").notNull(),
 	date: timestamp("date", { mode: 'string' }).defaultNow(),
-	status: varchar("status", { length: 10 }),
+	status: varchar("status", { length: 10 }).default('PENDING')
+});
+
+export const amogus = pgTable("amogus", {
+	id: serial("id").primaryKey().notNull(),
+	title: text("title").notNull(),
 });
 
 export type ToDo=typeof todos.$inferSelect
